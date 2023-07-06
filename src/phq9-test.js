@@ -19,9 +19,9 @@ var test = {
                 '几乎每天'
         ],
         professionals : [
-                'Thera Pist',
-                'Yuraima Estevez',
-                'Cubert Farnswort 教授'
+
+
+
         ],
         calculateSeverity : function(score) {
                 // 严重程度水平和是否建议咨询专业人士的布尔标识
