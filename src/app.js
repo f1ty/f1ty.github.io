@@ -108,6 +108,8 @@ var Form = React.createClass({
 			for (var q in this.state.validAnswers) {
 				score += this.state.validAnswers[q];
 			}
+			console.log(this.state.validAnswers)
+			console.log(score)
 			this.props.updateScore(score);
 			this.forceUpdate();
 			this.props.changePage('results', score);
