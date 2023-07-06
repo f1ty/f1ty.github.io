@@ -106,7 +106,7 @@ var Form = React.createClass({
 		if (isValid) {
 			var score = 0;
 			for (var q in this.state.validAnswers) {
-				score += this.state.validAnswers[q];
+				score += parseInt(this.state.validAnswers[q]);
 			}
 			console.log(this.state.validAnswers)
 			console.log(score)
