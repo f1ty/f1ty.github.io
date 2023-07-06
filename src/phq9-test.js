@@ -1,53 +1,52 @@
 var test = {
-	welcome : 'The PHQ-9 is the nine item depression scale of the Patient Health Questionnaire. It can be a powerful tool to assist clinicians with diagnosing depression and monitoring treatment response. The nine items of the PHQ-9 are based directly on the nine diagnostic criteria for major depressive disorder in the DSM-IV (Diagnostic and Statistical Manual Fourth Edition). This can help track a patients overall depression severity as well as the specific symptoms that are improving or not with treatment.',
-	mainQuestion : 'Over the last two weeks, how often have you been bothered by any of the following problems?',
-	subQuestions : [
-		'Little interest or pleasure in doing things?',
-		'Feeling down, depressed, or hopeless?',
-		'Trouble falling or staying asleep, or sleeping too much?',
-		'Feeling tired or having little energy?',
-		'Poor appetite or overeating?',
-		'Feeling bad about yourself - or that you are a failure or have let yourself or your family down?',
-		'Trouble concentrating on things, such as reading the newspaper or watching television?',
-		'Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual?',
-		'Thoughts that you would be better off dead, or of hurting yourself in some way?'
-	],
-	options : [
-		'Not at all',
-		'Several Days',
-		'More than half the days',
-		'Nearly every day'
-	],
-	professionals : [
-		'Thera Pist',
-		'Yuraima Estevez',
-		'Professor Cubert Farnswort'
-	],
-	calculateSeverity : function(score) {
-		// severity level and boolean flag for whether to recommend to professional
-		var results = {
-			severity : '',
-			recommend : false
-		};
+        welcome : 'PHQ-9是病人健康问卷的九项抑郁量表。它可以成为医生诊断抑郁症和监测治疗反应的有力工具。PHQ-9的九个项目直接基于DSM-IV（《诊断与统计手册 第四版》）中关于重性抑郁障碍的九个诊断标准。这可以帮助跟踪患者整体抑郁程度以及随着治疗改善或不改善的具体症状。',
+        mainQuestion : '在过去两周里，您是否被以下任何问题困扰过？',
+        subQuestions : [
+                '对做事情没有兴趣或乐趣?',
+                '感觉沮丧、抑郁或绝望?',
+                '入睡困难或保持睡眠，或者睡得太多?',
+                '感到疲劳或没有精力?',
+                '食欲不振或暴饮暴食?',
+                '对自己感到很差 - 或者感到自己是个失败者，辜负了自己或家人?',
+                '注意力集中困难，比如阅读报纸或看电视?',
+                '动作或说话速度过慢，以至于别人有可能注意到?或者相反 - 坐立不安或者不断躁动，比平常多动很多?',
+                '有想过最好死了，或以某种方式伤害自己的想法吗?'
+        ],
+        options : [
+                '完全没有',
+                '有几天',
+                '大部分天数',
+                '几乎每天'
+        ],
+        professionals : [
+                'Thera Pist',
+                'Yuraima Estevez',
+                'Cubert Farnswort 教授'
+        ],
+        calculateSeverity : function(score) {
+                // 严重程度水平和是否建议咨询专业人士的布尔标识
+                var results = {
+                        severity : '',
+                        recommend : false
+                };
 
-		// scoring logic
-		if (score < 5) {
-			results.severity = 'None';
-		} else if (score >= 5 && score <=9) {
-			results.severity = 'Mild';
-		} else if (score >= 10) {
-			// moderate minimum met, set recommendation
-			results.recommend = true;
-		  if (score >= 10 && score <= 14) {
-				results.severity = 'Moderate';
-			} else if (score >= 15 && score <= 19) {
-				results.severity = 'Moderately Severe';
-			} else if (score >= 20) {
-				results.severity = 'Severe';
-			}
-		}
+                // 计分逻辑
+                if (score < 5) {
+                        results.severity = '无';
+                } else if (score >= 5 && score <=9) {
+                        results.severity = '轻度';
+                } else if (score >= 10) {
+                        // 达到中度最小要求，设置建议
+                        results.recommend = true;
+                  if (score >= 10 && score <= 14) {
+                                results.severity = '中度';
+                        } else if (score >= 15 && score <= 19) {
+                                results.severity = '中度严重';
+                        } else if (score >= 20) {
+                                results.severity = '严重';
+                        }
+                }
 
-		return results;
-	}
+                return results;
+        }
 };
-
