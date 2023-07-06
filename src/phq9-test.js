@@ -19,7 +19,7 @@ var test = {
                 '几乎每天'
         ],
         professionals : [
-
+''
 
 
         ],
